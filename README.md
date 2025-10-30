@@ -1,4 +1,4 @@
-# GRA — Geometry & Robustness for Localization (Research Assistant Work)
+# GRA 
 
 A compact research codebase for studying classical localization algorithms (RSSI, TOA, TDOA, AOA) and their sensitivity to measurement noise. This repository contains simulation scripts, a Monte Carlo profiling engine, and plotting utilities used to produce the figures in the accompanying literature review.
 
