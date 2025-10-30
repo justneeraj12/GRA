@@ -16,7 +16,7 @@ RSSI_Pt = -30  # Ref. power at 1m (dBm)
 RSSI_n = 2.5   # Path loss exponent
 
 # Monte Carlo Parameters
-NUM_RUNS = 200  # Runs per noise level
+NUM_RUNS = 3000  # Runs per noise level
 N_STEPS = 25    # Number of noise levels
 
 # --- 2. Core Localization Functions ---
