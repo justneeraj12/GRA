@@ -141,17 +141,5 @@ Notes:
 
 This code is provided for academic research. Feel free to reuse and adapt; please cite or acknowledge if used in published work.
 
----
-
-If you'd like, I can:
-
-- add badges (CI / python version),
-- add a small `requirements.txt` or `pyproject.toml`,
-- wire up a short example Jupyter notebook that runs the Monte Carlo engine and plots results interactively.
-
-If you want any of the above, tell me which one and I will add it.
-
----
-
 Last updated: October 30, 2025
 
