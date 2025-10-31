@@ -1,3 +1,4 @@
+# SIGNAL_MODELLING/ADDED_NOISE.py
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import minimize
@@ -20,8 +21,7 @@ NUM_RUNS = 3000  # Runs per noise level
 N_STEPS = 25    # Number of noise levels
 
 # --- 2. Core Localization Functions ---
-# These functions now only perform the localization math.
-# They return [np.nan, np.nan] on failure.
+# ... (localize_rssi, localize_toa, localize_tdoa are unchanged) ...
 
 def localize_rssi(d1_est: float, d2_est: float, d3_est: float) -> np.ndarray:
     """
@@ -87,6 +87,19 @@ def localize_aoa(theta1: float, theta2: float) -> np.ndarray:
     Estimates position given two AOA measurements (triangulation).
     Uses the line-intersection method (A*P = b).
     """
+    
+    # --- FIX ---
+    # Add a safety check to prevent tan() from exploding near pi/2 (90 deg)
+    # We define a "danger zone" tolerance around pi/2 and -pi/2.
+    angle_tolerance = 0.02  # approx 1.15 degrees
+    
+    # Check if theta1 or theta2 are in the danger zone
+    if (np.abs(np.abs(theta1) - np.pi/2) < angle_tolerance or 
+        np.abs(np.abs(theta2) - np.pi/2) < angle_tolerance):
+        # This run is unstable, discard it by returning NaN
+        return np.array([np.nan, np.nan])
+    # --- END FIX ---
+
     m1 = np.tan(theta1)
     m2 = np.tan(theta2)
     
