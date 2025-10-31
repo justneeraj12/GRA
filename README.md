@@ -63,7 +63,7 @@ TDOA yields hyperbolic loci and commonly requires a reference anchor.
 AOA measures the bearing from an anchor to the target. For a noisy bearing measurement $\theta_i$:
 
 $$
-\heta_i = \{atan2}(p_y - a_{i,y},\; p_x - a_{i,x}) + \eta_i
+   heta_i = \{atan2}(p_y - a_{i,y},\; p_x - a_{i,x}) + \eta_i
 $$
 
 where $\eta_i$ is angular noise (e.g., wrapped Gaussian).
